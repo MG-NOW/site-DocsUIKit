@@ -1,0 +1,11 @@
+# MacOS
+.DS_Store
+
+/.cache/
+/.eslintcache/
+/.npm/
+/bin/
+/coverage/
+/node_modules/
+*.log
+*.tsbuildinfo
