@@ -1,5 +1,5 @@
 {
-  "include": ["src", "spec"],
+  "include": ["src", "spec", "*.ts", "*.js"],
   "extends": "@tsconfig/node24",
   "compilerOptions": {
     "outDir": "bin",

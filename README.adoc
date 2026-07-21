@@ -1,3 +1,43 @@
 = The MG-NOW website
 
 Rendered using Htmlstream's https://htmlstream.com/preview/docs-ui-kit/[Docs UI Kit]
+
+== TODO
+
+== Resources
+
+* https://pnpm.io/motivation[pnpm]
+
+* https://www.typescriptlang.org/[TypeScript]
+
+* https://www.typescriptlang.org/tsconfig/[TSConfig Reference]
+
+* https://tsx.hirok.io/[tsx]
+
+* https://vitest.dev/[vitest]
+
+* https://eslint.org/docs/latest/[ESLint]
+
+* https://typescript-eslint.io/rules/[typescript-eslint]
+
+* https://prettier.io/docs/[prettier]
+
+* https://github.com/prettier/eslint-config-prettier[eslint-config-prettier]
+
+* https://www.11ty.dev/[Eleventy]
+
+== To Consider
+
+* https://bun.com/docs[bun] -- node replacement
+
+* https://vite.dev/[vite] -- web build tool (devvlopment server)
+
+* https://oxc.rs/[OXC] -- JavaScript tools written in rust
+
+* https://vuejs.org/[Vue] -- JavaScript UI framework 
+
+* https://schema.org/[Schema.org] -- schemas for structured data on the net
+
+* https://www.opengraph.xyz/[OpenGraph] -- embedded metada for showing preview on X, Facebook, WhatsApp, etc.
+
+* https://og-image.org/docs/platforms/twitter[Twitter / X cards] -- Open Graph card generator

@@ -5,6 +5,7 @@
 /.eslintcache/
 /.npm/
 /bin/
+/public/
 /coverage/
 /node_modules/
 *.log
