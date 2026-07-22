@@ -1,15 +1,17 @@
+;
 // @ts-check
 
-import esLint from '@eslint/js'
-import prettierLint from 'eslint-config-prettier/flat'
-import {defineConfig} from 'eslint/config'
+import esLint from '@eslint/js';
+import prettierLint from 'eslint-config-prettier/flat';
+import { defineConfig } from 'eslint/config';
 // import tsDoc from 'eslint-plugin-tsdoc'
-import tsLint from 'typescript-eslint'
+import tsLint from 'typescript-eslint';
+
 
 export default defineConfig({
-  files: ['**/*.{js,ts}'],
-  ignores: ['bin/**'],
   extends: [esLint.configs.recommended, tsLint.configs.strict, tsLint.configs.stylistic],
+  files: ['**/*.{js,ts}'],
+  ignores: ['_site/**', 'docs-ui-kit/**', 'site/**'],
 
   ...prettierLint,
 

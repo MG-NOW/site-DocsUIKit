@@ -26,6 +26,7 @@ Rendered using Htmlstream's https://htmlstream.com/preview/docs-ui-kit/[Docs UI 
 
 * https://www.11ty.dev/[Eleventy]
 
+
 == To Consider
 
 * https://bun.com/docs[bun] -- node replacement
@@ -41,3 +42,37 @@ Rendered using Htmlstream's https://htmlstream.com/preview/docs-ui-kit/[Docs UI 
 * https://www.opengraph.xyz/[OpenGraph] -- embedded metada for showing preview on X, Facebook, WhatsApp, etc.
 
 * https://og-image.org/docs/platforms/twitter[Twitter / X cards] -- Open Graph card generator
+
+== Notes
+
+Code for generating 11ty types from https://bennypowers.dev/posts/typescript-11ty-config/[Benny Powers]:
+....
+import {$} from 'execa'
+import Manifest from '../package.json' with {type: 'json'}
+
+await $`npx tsc node_modules/@11ty/eleventy/src/UserConfig.js
+        --declaration
+        --allowJs
+        --emitDeclarationOnly
+        --moduleResolution nodenext
+        --module nodenext
+        --target esnext`
+
+for (const pkg in Manifest.dependencies) {
+  if (pkg.startsWith('@11ty')) {
+    const spec = import.meta.resolve(pkg).replace('file://', '')
+    try {
+      await $`npx tsc ${spec}
+              --declaration
+              --allowJs
+              --emitDeclarationOnly
+              --moduleResolution nodenext
+              --module nodenext
+              --target esnext`
+    } catch (e) {
+      console.log(e.stdout)
+    }
+    console.log(`Wrote types for ${pkg}`)
+  }
+}
+....

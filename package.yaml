@@ -7,15 +7,15 @@ type: module
 bin:
   hello: bin/src/hello.js
 scripts:
-  prebuild: pnpm clean
-  build: tsc --build
-  clean: rm -rf bin
+  build: rm -rf bin && tsc --build
+  clean: rm -rf bin _site
   lint: eslint
   lint-fix: eslint --fix
   pretty: prettier . --check
   pretty-fix: prettier . --write
-  pretest: pnpm build
-  test: vitest run
+  test: rm -rf bin && vitest run
+  serve: eleventy --serve
+  site: rm -rf _site && eleventy
   hello: tsx src/hello.ts
 devDependencies:
   '@eslint/js': ^10.0.1
@@ -30,6 +30,7 @@ devDependencies:
   typescript-eslint: ^8.63.0
   vitest: ^4.1.10
 dependencies:
+  '@11ty/eleventy': ^3.1.6
   chalk: ^5.6.2
 prettier:
   semi: false

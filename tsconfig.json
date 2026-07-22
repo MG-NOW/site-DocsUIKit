@@ -1,5 +1,6 @@
 {
   "include": ["src", "spec", "*.ts", "*.js"],
+  "exclude": ["eleventy.config.js"],
   "extends": "@tsconfig/node24",
   "compilerOptions": {
     "outDir": "bin",
