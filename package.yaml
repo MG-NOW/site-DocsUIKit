@@ -17,9 +17,9 @@ scripts:
   pretest: pnpm build
   test: vitest run
   hello: tsx src/hello.ts
-  site:dev: vitepress dev mgnow
-  site:build: vitepress build mgnow
-  site:preview: vitepress preview mgnow
+  site:dev: vitepress dev mg-now
+  site:build: vitepress build mg-now
+  site:preview: vitepress preview mg-now
 devDependencies:
   '@eslint/js': ^10.0.1
   '@ianvs/prettier-plugin-sort-imports': ^4.7.1
